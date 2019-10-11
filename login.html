@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,33 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <title>Login</title>
+    <script>
+        $(document).ready(function () {
+            $("txtUsername").focus();
+
+            $("#btnLogin").click(function () {
+                let username = $("#txtUsername").val();
+                let password = $("#txtPassword").val();
+                if (username == "user" && password == "1234") {
+                    alert("OK");
+                }
+                else {
+                    alert("Fail");
+                }
+            });
+
+            $("#btnReset").click(function(){
+                $("#txtUsername").val("");
+                $("#txtPassword").val("");
+                $("#txtUsername").focus("");
+            });
+
+
+
+        });
+    </script>
 </head>
+
 <body>
     <div class="container">
         <input type="text" id="txtUsername" class="form-control mb-2" placeholder="Username">
@@ -17,7 +44,8 @@
         <button id="btnLogin" class="btn btn-outline-primary">Log in</button>
         <button id="btnReset" class="btn btn-outline-secondary">Reset</button>
     </div>
-    
-    
+
+
 </body>
+
 </html>
